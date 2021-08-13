@@ -47,9 +47,9 @@
 export default {
   data() {
     return {
-      day: 0,
-      set: 0,
-      dose: 0,
+      day: null,
+      set: null,
+      dose: null,
       answer: "",
       alert: "",
     }
