@@ -56,6 +56,8 @@ export default {
   },
   methods: {
     medicines(day, set, dose) {
+      this.answer = ""
+      this.alert = ""
       if (day > 0 && set > 0 && dose > 0) {
         let totalNumber = day * dose
         let decimalSet = totalNumber / set;
