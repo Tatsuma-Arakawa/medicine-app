@@ -3,6 +3,15 @@
     <h1 class="header">お薬かぞえくん</h1>
     <v-row>
       <v-col cols="6">
+        <p class="title">1日量</p>
+      </v-col>
+      <v-col cols="6">
+        <v-text-field
+            label="1日量"
+            v-model="dose"
+          ></v-text-field>
+      </v-col>
+      <v-col cols="6">
         <p class="title">服用日数</p>
       </v-col>
       <v-col cols="6">
@@ -20,15 +29,7 @@
             v-model="set"
           ></v-text-field>
       </v-col>
-      <v-col cols="6">
-        <p class="title">1日の服用錠数</p>
-      </v-col>
-      <v-col cols="6">
-        <v-text-field
-            label="1日の服用錠数"
-            v-model="dose"
-          ></v-text-field>
-      </v-col>
+
       <v-col class="text-center" cols="12">
         <v-btn class="button" @click="medicines(day, set, dose)">
           <p>決定</p>
