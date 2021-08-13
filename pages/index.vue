@@ -62,7 +62,11 @@ export default {
         let integerSet = Math.floor( decimalSet ) ;
         let totalSet = integerSet * set
         let Individual = totalNumber - totalSet
-        this.answer = integerSet + "シートと" + Individual +"錠"
+        if (Individual > 0) {
+          this.answer = integerSet + "シートと" + Individual +"錠"
+        } else {
+          this.answer = integerSet + "シート" 
+        }
       } else {
         this.alert = "1以上の半角数字で入力してください"
       }
