@@ -37,6 +37,7 @@
       </v-col>
       <v-col>
         <p class="text-center font-bold answer">{{ answer }}</p>
+        <p class="text-center font-bold alert">{{ alert }}</p>
       </v-col>
     </v-row>
   </div>
@@ -49,17 +50,22 @@ export default {
       day: 0,
       set: 0,
       dose: 0,
-      answer: ""
+      answer: "",
+      alert: "",
     }
   },
   methods: {
     medicines(day, set, dose) {
-      let totalNumber = day * dose
-      let decimalSet = totalNumber / set;
-      let integerSet = Math.floor( decimalSet ) ;
-      let totalSet = integerSet * set
-      let Individual = totalNumber - totalSet
-      this.answer = integerSet + "シートと" + Individual +"錠"
+      if (day > 0 && set > 0 && dose > 0) {
+        let totalNumber = day * dose
+        let decimalSet = totalNumber / set;
+        let integerSet = Math.floor( decimalSet ) ;
+        let totalSet = integerSet * set
+        let Individual = totalNumber - totalSet
+        this.answer = integerSet + "シートと" + Individual +"錠"
+      } else {
+        this.alert = "1以上の半角数字で入力してください"
+      }
     }
   }
 }
@@ -89,5 +95,9 @@ export default {
   }
   .answer {
     font-size: 25px;
+  }
+  .alert {
+    font-size: 15px;
+    color: red;
   }
 </style>
